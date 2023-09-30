@@ -28,11 +28,11 @@ plt.scatter(X[:, 0], X[:, 1], c = hc.labels_, cmap='rainbow')
 plt.show()
 
 wcss = []
-for i in range(1, 6):
+for i in range(2, 6):
     kmeans = KMeans(n_clusters=i, init='k-means++', n_init=3, random_state=42)
     kmeans.fit(X)
     wcss.append(kmeans.inertia_)
-plt.plot(range(1, 6), wcss)
+plt.plot(range(2, 6), wcss)
 plt.title('The Elbow Method')
 plt.xlabel('Clusters')
 plt.ylabel('WCSS')
